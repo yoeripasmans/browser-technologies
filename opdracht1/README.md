@@ -31,4 +31,7 @@ Voor deze opdracht ga je toepassen wat je van opdracht 1.1 hebt geleerd.
 
 Beoordelingscriteria
 - Zet je code op Github
-- Schrijf een Readme met een beschrijving van de problemen die je hebt gevonden, hoe je die hebt opgelost, of hoe je dit zou oplossen (met todo’s) als je genoeg tijd en budget zou hebben
+- Schrijf een Readme met:
+  - een beschrijving van de problemen die je hebt gevonden
+  - beschrijf hoe je de problemen hebt opgelost
+  - of hoe je dit zou oplossen (met todo’s) als je genoeg tijd en budget zou hebben
