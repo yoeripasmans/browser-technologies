@@ -1,7 +1,8 @@
 # Browser Technologies
-//Robuuste, toegankelijke websites leren bouwen … 
+//Robuuste, toegankelijke websites leren bouwen …
 
 ## Opdracht 1 - Progressive Enhancement
+//Het web is voor iedereen. Leren over Progressive enhancement
 
 ### Opdracht 1.1 - Breek het Web
 Het Web laten 'breken' door features van het platform bewust uit te zetten. Images, custom fonts, JavaScript, kleur, breedband internet, etc. Allemaal met als doel je te laten beseffen hoeveel je nog niet weet van het Web, erachter komen dat je misschien aannames hebt die niet kloppen, en om je je in te laten leven in de eindgebruiker.
@@ -18,18 +19,16 @@ Lezen: [Everyone has JavaScript, right?](https://kryogenix.org/code/browser/ever
 
 
 ### Opdracht 1.2 - Fork je OBA
-Hoe zit het eigenlijk met Progressive Enhancement van je OBA opdracht? Waarschijnlijk kan daar wel het één en ander aan verbeterd worden, dat ding is immers in een week in elkaar gehackt! 
+Hoe zit het eigenlijk met Progressive Enhancement van je OBA opdracht? Waarschijnlijk kan daar wel het één en ander aan verbeterd worden, dat ding is immers in een week in elkaar gehackt!
 
 Voor deze opdracht ga je toepassen wat je van opdracht 1.1 hebt geleerd.
-- Pas Progressive enhancement toe op je OBA Web App. 
+- Pas Progressive enhancement toe op je OBA Web App.
 - Check je OBA Web App op de 8 features uit opdracht 1.1 en verbeter de code waar mogelijk.
 - Test  je OBA Web App in het device lab.
-- Laat je OBA Web App voorlezen door een screenreader. 
+- Laat je OBA Web App voorlezen door een screenreader.
 - Gebruik onderstaande artikelen om je code te optimaliseren.
 [The accessibility mindset](https://24ways.org/2015/the-accessibility-mindset/) en [Accessibility Originates With UX: A BBC iPlayer Case Study](https://www.smashingmagazine.com/2015/02/bbc-iplayer-accessibility-case-study/)
 
-Criteria
+Beoordelingscriteria
 - Zet je code op Github
-- Schrijf een Readme met een beschrijving van de problemen die je hebt gevonden, hoe je die hebt opgelost, of hoe je dit zou oplossen (met todo’s) als je genoeg tijd en budget zou hebben 
-
- 
+- Schrijf een Readme met een beschrijving van de problemen die je hebt gevonden, hoe je die hebt opgelost, of hoe je dit zou oplossen (met todo’s) als je genoeg tijd en budget zou hebben
