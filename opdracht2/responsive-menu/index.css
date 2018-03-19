@@ -1,0 +1,218 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+body.noscroll {
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+}
+
+header {
+    width: 100%;
+    height: 4em;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+}
+
+article {
+    padding: 2em;
+    max-width: 55em;
+    margin: 0 auto;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+article h2 {
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 1.8em;
+}
+
+
+.menu-toggle {
+    margin-left: auto;
+}
+
+/*Displays buttons */
+
+@media (max-width: 48em) {
+    .menu-close, .menu-toggle {
+        display: block !important;
+    }
+}
+
+.menu-toggle svg {
+    width: 2em;
+}
+
+.menu-toggle:hover, .menu-toggle:focus {
+    color: #c00;
+}
+
+/*
+ Default styles + Mobile first
+ Offscreen menu style
+*/
+
+.main-menu {
+    position: absolute;
+    right: -18.75em;
+    right: -100vw;
+    top: 0;
+    height: 100%;
+    margin-left: auto;
+    overflow-y: scroll;
+    overflow-x: visible;
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+.main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 4em 0 0;
+    min-height: 100%;
+    width: 18.75em;
+    width: 80vw;
+    background: #1a1a1a;
+}
+
+.main-menu a {
+    display: block;
+    padding: 1.5em;
+    line-height: 1em;
+    font-size: 1em;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #383838;
+}
+
+.main-menu li:first-child a {
+    border-top: 1px solid #383838;
+}
+
+.main-menu a:hover, .main-menu a:focus {
+    background: #333;
+    text-decoration: underline;
+}
+
+.main-menu .menu-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1.25em;
+}
+
+.main-menu .menu-close a {
+    border-bottom: none;
+}
+
+.main-menu .menu-close svg {
+    width: 1.3em;
+    fill: #fff;
+}
+
+/*
+ On small devices, allow it to toggle...
+*/
+
+/*
+ :target for non-JavaScript
+ aria-expanded="true/false" will be for JavaScript
+*/
+
+.main-menu:target, .main-menu[aria-expanded="true"], .main-menu.open {
+    right: 0;
+}
+
+.main-menu:target .menu-close, .main-menu[aria-expanded="true"] .menu-close {
+    z-index: 1001;
+}
+
+.main-menu:target ul, .main-menu[aria-expanded="true"] ul {
+    position: relative;
+    z-index: 1000;
+}
+
+/*
+ We could us `.main-menu:target:after`, but
+ it wouldn't be clickable.
+*/
+
+.main-menu:target+.overlay, .main-menu[aria-expanded="true"]+.overlay, .main-menu.open+.overlay {
+    position: absolute;
+    display: block;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    background: #000;
+    background: rgba(0, 0, 0, .85);
+    cursor: default;
+}
+
+@supports (position: fixed) {
+    .main-menu, .main-menu:target+.overlay, .main-menu[aria-expanded="true"]+.overlay {
+        position: fixed;
+    }
+}
+
+/*
+ Larger screen styling
+ Horizontal menu
+*/
+
+@media (min-width: 48em) {
+    .menu-toggle, .main-menu .menu-close {
+        display: none;
+    }
+    /* Undo positioning of off-canvas menu */
+    .main-menu {
+        position: relative;
+        left: auto;
+        top: auto;
+        right: auto;
+        height: auto;
+    }
+    .main-menu ul {
+        display: flex;
+        padding: 0;
+        height: auto;
+        width: auto;
+        background: none;
+    }
+    .main-menu a {
+        color: #06c;
+        border: 0 !important;
+        /* Remove borders from off-canvas styling */
+    }
+    .main-menu a:hover, .main-menu a:focus {
+        background: none;
+        /* Remove background from off-canvas styling */
+        color: #c00;
+    }
+}
+
+/* Screen reader only */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
