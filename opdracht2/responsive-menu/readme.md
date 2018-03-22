@@ -1,5 +1,7 @@
 # Progressive enhanced responsive menu
 
+Link naar demo: https://yoeripasmans.github.io/browser-technologies/opdracht2/responsive-menu/
+
 Een responsive uitgewerkt menu, dat een hamburger icoon wordt op een klein scherm. Hiermee kan de gebruiker door de pagina heen navigeren ongeacht wat voor een device gebruikt wordt. Daarnaast is er progressive enhanced toegepast zodat je zonder CSS & Javascript door de site kan navigeren.
 
 ## Core functionaliteit
