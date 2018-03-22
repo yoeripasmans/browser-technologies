@@ -1,3 +1,8 @@
+(function() {
+	if (!document.querySelector || !('classList' in document.body)) {
+		return false;
+	}
+
 var menuOpen = document.querySelector('.menu-toggle');
 var menuClose = document.querySelector('.menu-close');
 var overlay = document.querySelector('.overlay');
@@ -21,3 +26,5 @@ overlay.addEventListener('click', function(e){
 	menu.classList.remove('open');
 	body.classList.remove('noscroll');
 });
+
+})();

@@ -1,4 +1,4 @@
-*, *:before, *:after {
+* {
     box-sizing: border-box;
 }
 
@@ -37,6 +37,10 @@ article h2 {
     font-size: 1.8em;
 }
 
+h1 {
+	font-size: 1.4em;
+}
+
 
 .menu-toggle {
     margin-left: auto;
@@ -58,11 +62,6 @@ article h2 {
     color: #c00;
 }
 
-/*
- Default styles + Mobile first
- Offscreen menu style
-*/
-
 .main-menu {
     position: absolute;
     right: -18.75em;
@@ -83,7 +82,7 @@ article h2 {
     min-height: 100%;
     width: 18.75em;
     width: 80vw;
-    background: #1a1a1a;
+    background-color: #1a1a1a;
 }
 
 .main-menu a {
@@ -121,15 +120,6 @@ article h2 {
     fill: #fff;
 }
 
-/*
- On small devices, allow it to toggle...
-*/
-
-/*
- :target for non-JavaScript
- aria-expanded="true/false" will be for JavaScript
-*/
-
 .main-menu:target, .main-menu[aria-expanded="true"], .main-menu.open {
     right: 0;
 }
@@ -142,11 +132,6 @@ article h2 {
     position: relative;
     z-index: 1000;
 }
-
-/*
- We could us `.main-menu:target:after`, but
- it wouldn't be clickable.
-*/
 
 .main-menu:target+.overlay, .main-menu[aria-expanded="true"]+.overlay, .main-menu.open+.overlay {
     position: absolute;
@@ -195,16 +180,12 @@ article h2 {
     .main-menu a {
         color: #06c;
         border: 0 !important;
-        /* Remove borders from off-canvas styling */
     }
     .main-menu a:hover, .main-menu a:focus {
         background: none;
-        /* Remove background from off-canvas styling */
         color: #c00;
     }
 }
-
-/* Screen reader only */
 
 .sr-only {
     position: absolute;
