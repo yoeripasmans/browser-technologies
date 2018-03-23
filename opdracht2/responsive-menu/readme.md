@@ -38,7 +38,6 @@ Daarnaast in de CSS of position fixed door de browser ondersteund wordt:
 ## Browser compatibiliteit
 
 ### Javascript
-- e.preventDefault() wordt door alle browsers ondersteund alleen internet explorer t/m 9.
 - document.querySelector wordt door alle browsers ondersteund alleen internet explorer t/m 9.
 - classList.add & classList.remove wordt door alle browsers ondersteund, bij internet explorer alleen t/m 9.
 - addEventListener niet gesupport op IE 8 en Opera 6.0 and eerdere versies.

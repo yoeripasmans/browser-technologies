@@ -11,14 +11,12 @@
 <body>
 	<header>
 		<h1>Logo</h1>
-		<a href="#main-menu" style="display:none" class="menu-toggle" role="button" id="main-menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Open main menu">
-  		<span class="sr-only">Open main menu</span>
+		<a href="#main-menu" style="display:none" class="menu-toggle" id="main-menu-toggle">
 		<svg xmlns="http://www.w3.org/2000/svg" width="32px" height="25px" viewbox="0 0 396.7 290.1"><path d="M17 34.7h362.7c9.4 0 17-7.7 17-17s-7.6-17-17-17H17C7.6.7 0 8.4 0 17.7s7.7 17 17 17zm0 127.5h362.7c9.4 0 17-7.6 17-17s-7.6-17-17-17H17c-9.4 0-17 7.6-17 17s7.7 17 17 17zm0 127.5h362.7c9.4 0 17-7.6 17-17s-7.6-17-17-17H17c-9.4 0-17 7.6-17 17s7.7 17 17 17z"/></svg>
 		</a>
-		<nav id="main-menu" class="main-menu" role="navigation" aria-expanded="false" aria-label="Main menu">
-			<a href="#main-menu-toggle" style="display:none" class="menu-close" role="button" id="main-menu-close" aria-expanded="false" aria-controls="main-menu" aria-label="Close main menu">
-			 <span class="sr-only">Close main menu</span>
-			 <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="21px" viewbox="0 0 512 512" aria-hidden="true"><path d="M505.943 6.058c-8.077-8.077-21.172-8.077-29.249 0L6.058 476.693c-8.077 8.077-8.077 21.172 0 29.249 4.038 4.04 9.332 6.058 14.625 6.058 5.293 0 10.586-2.019 14.625-6.059L505.943 35.306c8.076-8.076 8.076-21.171 0-29.248z"/><path d="M505.942 476.694L35.306 6.059c-8.076-8.077-21.172-8.077-29.248 0-8.077 8.076-8.077 21.171 0 29.248l470.636 470.636c4.038 4.039 9.332 6.058 14.625 6.058 5.293 0 10.587-2.019 14.624-6.057 8.075-8.078 8.075-21.173-.001-29.25z"/></svg>
+		<nav id="main-menu" class="main-menu">
+			<a href="#main-menu-toggle" style="display:none" class="menu-close" id="main-menu-close">
+			 <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="21px" viewbox="0 0 512 512"><path d="M505.943 6.058c-8.077-8.077-21.172-8.077-29.249 0L6.058 476.693c-8.077 8.077-8.077 21.172 0 29.249 4.038 4.04 9.332 6.058 14.625 6.058 5.293 0 10.586-2.019 14.625-6.059L505.943 35.306c8.076-8.076 8.076-21.171 0-29.248z"/><path d="M505.942 476.694L35.306 6.059c-8.076-8.077-21.172-8.077-29.248 0-8.077 8.076-8.077 21.171 0 29.248l470.636 470.636c4.038 4.039 9.332 6.058 14.625 6.058 5.293 0 10.587-2.019 14.624-6.057 8.075-8.078 8.075-21.173-.001-29.25z"/></svg>
 		   </a>
 			<ul>
 				<li><a href="index.html">Home</a></li>
@@ -27,7 +25,7 @@
 				<li><a href="#contact">Contact</a></li>
 			</ul>
 		</nav>
-		<a href="#main-menu-toggle" class="overlay" tabindex="-1" aria-hidden="true" hidden></a>
+		<a href="#main-menu-toggle" class="overlay" tabindex="-1" hidden></a>
 	</header>
 
 	<article>
