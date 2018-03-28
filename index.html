@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Beatmaker</title>
+	<link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body>
+	<header>
+		<h1>Beatmaker 🔥🔥</h1>
+	</header>
+	<main>
+		<div class="audio-elements">
+			<div class="instruments">
+				<h2>Instruments</h2>
+				<audio src="assets/audio/instruments/kick.wav" controls="controls" data-sound-category="instrument" data-instrument="kick">
+			Your browser does not support the audio element.
+			</audio>
+				<audio src="assets/audio/instruments/clap.wav" controls="controls" data-sound-category="instrument" data-instrument="clap">
+			Your browser does not support the audio element.
+			</audio>
+				<audio src="assets/audio/instruments/hat.wav" controls="controls" data-sound-category="instrument" data-instrument="hat">
+			Your browser does not support the audio element.
+			</audio>
+				<audio src="assets/audio/instruments/snare.wav" controls="controls" data-sound-category="instrument" data-instrument="snare">
+			Your browser does not support the audio element.
+			</audio>
+				<audio src="assets/audio/instruments/perc.wav" controls="controls" data-sound-category="instrument" data-instrument="perc">
+			Your browser does not support the audio element.
+			</audio>
+				<audio src="assets/audio/instruments/perc2.wav" controls="controls" data-sound-category="instrument" data-instrument="perc2">
+			Your browser does not support the audio element.
+			</audio>
+				<audio src="assets/audio/instruments/perc3.wav" controls="controls" data-sound-category="instrument" data-instrument="perc3">
+		Your browser does not support the audio element.
+		</audio>
+				<audio src="assets/audio/instruments/bass.wav" controls="controls" data-sound-category="instrument" data-instrument="bass">
+			Your browser does not support the audio element.
+			</audio>
+				<audio src="assets/audio/instruments/bass2.wav" controls="controls" data-sound-category="instrument" data-instrument="bass2">
+			Your browser does not support the audio element.
+			</audio>
+				<audio src="assets/audio/instruments/808.wav" controls="controls" data-sound-category="instrument" data-instrument="bass3">
+			Your browser does not support the audio element.
+			</audio>
+
+				<audio src="assets/audio/instruments/vox.wav" controls="controls" data-sound-category="instrument" data-instrument="vox">
+			Your browser does not support the audio element.
+			</audio>
+				<audio src="assets/audio/instruments/vox2.wav" controls="controls" data-sound-category="instrument" data-instrument="vox2">
+			Your browser does not support the audio element.
+			</audio>
+				<audio src="assets/audio/instruments/vox3.wav" controls="controls" data-sound-category="instrument" data-instrument="vox3">
+			Your browser does not support the audio element.
+			</audio>
+				<audio src="assets/audio/instruments/vox4.wav" controls="controls" data-sound-category="instrument" data-instrument="vox4">
+			Your browser does not support the audio element.
+			</audio>
+				<audio src="assets/audio/instruments/iphone.wav" controls="controls" data-sound-category="instrument" data-instrument="fx">
+			Your browser does not support the audio element.
+			</audio>
+				<audio src="assets/audio/instruments/fx.wav" controls="controls" data-sound-category="instrument" data-instrument="fx2">
+			Your browser does not support the audio element.
+			</audio>
+			</div>
+
+			<div class="loops">
+				<h2>Loops</h2>
+				<audio src="assets/audio/loops/happy.wav" controls="controls" data-sound-category="loops" loop>
+			Your browser does not support the audio element.
+				</audio>
+				<audio src="assets/audio/loops/plug.wav" controls="controls" data-sound-category="loops" loop>
+			Your browser does not support the audio element.
+				</audio>
+				<audio src="assets/audio/loops/congrats.wav" controls="controls" data-sound-category="loops" loop>
+			Your browser does not support the audio element.
+				</audio>
+				<audio src="assets/audio/loops/organ.wav" controls="controls" data-sound-category="loops" loop>
+			Your browser does not support the audio element.
+				</audio>
+				<audio src="assets/audio/loops/destroyedpiano.wav" controls="controls" data-sound-category="loops" loop>
+			Your browser does not support the audio element.
+				</audio>
+				<audio src="assets/audio/loops/trippy.wav" controls="controls" data-sound-category="loops" loop>
+			Your browser does not support the audio element.
+				</audio>
+				<audio src="assets/audio/loops/popchords.wav" controls="controls" data-sound-category="loops" loop>
+			Your browser does not support the audio element.
+				</audio>
+			</div>
+		</div>
+		<div class="audio-buttons"></div>
+
+		<div class="audio-controls">
+			<header>
+				<h3>Loop controls</h3>
+			</header>
+			<div class="audio-control-buttons">
+				<button id="prev-button" type="button">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 487.91 487.91" width="14px" height="14px"><path d="M464.923 19.725c12.696 0 22.987 10.29 22.987 22.985v402.253c0 12.694-10.291 22.987-22.987 22.987L91.403 261.075s-17.239-17.238 0-34.477c17.239-17.24 373.52-206.873 373.52-206.873zM76.821 443.271c0 13.76-11.155 24.915-24.915 24.915H24.915C11.155 468.186 0 457.031 0 443.271V44.639c0-13.761 11.155-24.915 24.915-24.915h26.991c13.76 0 24.915 11.155 24.915 24.915v398.632z" fill="#000"/></svg></button>
+				<button id="play-button" type="button"> <svg width="24" height="24" viewbox="210 14 21 24" xmlns="http://www.w3.org/2000/svg" class="play-icon"><path fill="#000" fill-rule="evenodd" d="M230.677 25.815L210 37.63V14"/></svg></button>
+				<button id="stop-button" type="button" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 36 36" width="24" height="24"><path d="M35 0H1C.448 0 0 .447 0 1v34c0 .553.448 1 1 1h34c.552 0 1-.447 1-1V1c0-.553-.448-1-1-1z" fill="#000"/></svg></button>
+				<button id="next-button" type="button">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 487.913 487.913" width="14" height="14"><path d="M22.987 468.187C10.291 468.187 0 457.896 0 445.202V42.949c0-12.695 10.291-22.988 22.987-22.988l373.519 206.875s17.239 17.238 0 34.477C379.268 278.552 22.987 468.187 22.987 468.187zM411.09 44.64c0-13.76 11.155-24.915 24.915-24.915h26.993c13.76 0 24.915 11.155 24.915 24.915v398.633c0 13.76-11.155 24.915-24.915 24.915h-26.993c-13.76 0-24.915-11.155-24.915-24.915V44.64z" fill="#000"/></svg></button>
+			</div>
+			<!-- <label for="bpm">BPM</label>
+			<input id="bpm" name="bpm" type="number" min="60" max="240" value="130"> -->
+		</div>
+	</main>
+
+
+	<h3 class="incoming-text">I'ts lit!!</h3>
+
+
+	<script src="assets/js/buffer-loader.js"></script>
+	<script src="assets/js/index.js"></script>
+</body>
+
+</html>
