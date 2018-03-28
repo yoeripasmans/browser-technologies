@@ -27,11 +27,24 @@
 		context, audioSrc,
 		bufferLoadCompleted
 	);
+
+	var loader = {
+		element: document.querySelector('.loader'),
+		show: function(el) {
+			this.element.classList.add("show");
+		},
+		hide: function(el) {
+			this.element.classList.remove("show");
+		}
+
+	};
+	loader.show();
 	//initialize bufferloader
 	bufferLoader.load();
 
-	function bufferLoadCompleted(bufferList) {
 
+	function bufferLoadCompleted(bufferList) {
+		loader.hide();
 		for (var i = 0; i < bufferList.length; i++) {
 			bufferList[i].src = audioElements[i].getAttribute("src");
 			bufferList[i].name = audioElements[i].getAttribute("data-instrument");
@@ -67,6 +80,7 @@
 						document.querySelector('.' + instruments[i].name).classList.add("active");
 				}
 			}
+
 		}, true);
 
 		window.addEventListener("keyup", function(e) {
@@ -78,6 +92,13 @@
 				}
 			}
 		}, true);
+
+		window.addEventListener('touchmove', function(event) {
+			event = event.originalEvent || event;
+			if (event.scale !== 1) {
+				event.preventDefault();
+			}
+		}, false);
 
 	}
 
