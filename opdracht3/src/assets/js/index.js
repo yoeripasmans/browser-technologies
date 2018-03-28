@@ -101,7 +101,7 @@
 			}
 		}, false);
 
-		window.addEventListener('touchmove', function(event) {
+		window.addEventListener('touchstart', function(e) {
 			var t2 = e.timeStamp;
 			var t1 = e.currentTarget.dataset.lastTouch || t2;
 			var dt = t2 - t1;
