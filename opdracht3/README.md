@@ -1,20 +1,88 @@
-# Browser Technologies
-//Robuuste, toegankelijke websites leren bouwen …
+# Progressive enhanched beatmaker
 
-## Opdracht 3 - Progressive Enhanced Browser Technologies
-//Browser Technologies onderzoeken en implementeren als enhancement. Basic functionaliteit van een use case doorgronden.
+Een uitgewerkte demo waarbij je met verschillende geluiden een beat kan maken. Dit kan met de muis of toetsenbord gedaan worden. Daarnaast kan de gebruiker in de achtergrond nog een geluid laten afspelen om daarbij een beat te kunnen maken.
 
-Maak een demo op basis van een use case. Zorg dat alle gebruikers, met alle browsers, in iedere context minimaal de core functionaliteit te zien/horen/voelen krijgen. Bouw je demo in 3 lagen, volgens het principe van Progressive Enhancement. Gebruik als enhanced feature een (hippe, innovatieve, vooruitstrevende) Browser Technologie die je gaat onderzoeken op functionaliteit, toegankelijkheid en (browser) ondersteuning.
+[Link naar demo](https://yoeripasmans.github.io/browser-technologies/opdracht3/beatmaker/)
 
-Beoordelingscriteria
-- De code staat in een repository op GitHub
-- Er is een Readme toegevoegd met daarin beschreven:
-  - een beschrijving van de core functionality
-  - een beschrijving van de feature(s)/Browser Technologies
-  - welke browser de feature(s) wel/niet ondersteunen
-  - een beschrijving van de accessibility issues die zijn onderzocht
-- De demo is opgebouwd in 3 lagen, volgens het principe van Progressive Enhancement
-- De user experience van de demo is goed
-  - de leesbaarheidsregels zijn toegepast, contrast en kleuren kloppen
-  - het heeft een gebruiksvriendelijke interface, met gebruikmaking van affordance en feedback op de interactieve elementen
-- Student kan uitleggen wat Progressive Enhancement en Feature Detectie is en hoe dit toe te passen in Web Development
+## Core functionaliteit
+
+De belangrijkste functionaliteit van de beatmaker is dat de gebruiker altijd geluid moet kunnen afspelen op elk device ook als CSS of Javascript het niet doet. Dit heb ik gerealiseerd door eerst een basis structuur met audio elementen op te zetten in de HTMl. Dit werkt namelijk altijd. Hierna voeg ik als de browser het ondersteund met Javascript de functionaliteiten van de `Web Audio API` toe en verberg ik alle audio elementen. Op deze manier blijft de audio ten alle tijden bruikbaar.
+
+## Feature detection
+
+Voor feature detection heb ik bovenin mijn javascript bestand een if else neergezet die checkt of de Javascript functionaliteiten die ik in mijn code gebruik ondersteund worden door de browser. Hierna wordt er gekeken of de `Web Audio API` ondersteund wordt.
+
+```javascript
+if (document.querySelector || ('classList' in document.body)) {
+	try {
+		// Fix up for prefixing
+		window.AudioContext = window.AudioContext || window.webkitAudioContext;
+		context = new AudioContext();
+	} catch (e) {
+		alert('Web Audio API is not supported in this browser');
+	}
+} else {
+	return false;
+}
+```
+
+Daarnaast bij sommige functionaliteit uit de `Web Audio API` is er verschil tussen de methods.In nieuwere versie van de web audio api is `noteOn` hernoemd naar `start`. Safari gebruikt nog de oudere variant terwijl chrome de nieuwste gebruikt. Om alles te kunnen supporten heb ik hiervoor ook een feature detection geschreven die checkt wat ondersteund wordt.
+
+```javascript
+if (!this.source.start) {
+	this.source.noteOn(0);
+} else {
+	this.source.start(0);
+}
+```
+
+Ten slotte kijk ik in de CSS met `@support` of `display: flex;` door de browser ondersteund wordt:
+
+```CSS
+@supports (display: flex) {
+    .audio-control-buttons {
+        display: flex;
+        justify-content: center;
+		align-items: center;
+    }
+}
+```
+Als dit niet het geval is wordt er een fallback gebruikt wat er iets minder mooi uitziet maar wel werkt:
+
+```CSS
+.active li {
+    width: 100%;
+    height: 100%;
+	padding: 3em;
+    display: inline;
+    margin: auto;
+	color: #fff;
+}
+```
+
+## Browser compatibiliteit
+
+### Javascript
+- e.preventDefault() wordt door alle browsers ondersteund alleen internet explorer t/m 9.
+- document.querySelector wordt door alle browsers ondersteund alleen internet explorer t/m 9.
+- classList.add & classList.remove wordt door alle browsers ondersteund alleen internet explorer t/m 9.
+- addEventListener niet gesupport op IE 8 en Opera 6.0 and eerdere versies.
+
+## CSS
+- CSS3 2D Transforms wordt alleen niet op Opera Mini ondersteund
+- View width & view height units worden niet ondersteund op opera Mini en deels op Internet explorer (Werkt wel door fallback naar EM)
+
+## Accessibility
+
+Door van te voren na te denken over accessibility heb ik voor alle interactieve elementen buttons gebruikt. Zo kan de applicatie gemakkelijk zonder muis/trackpad bestuurd worden.
+
+## Bronnen
+
+- CSS @support functionaliteit
+[https://developer.mozilla.org/en-US/docs/Web/CSS/@supports](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)
+
+- Support van features in het algemeen
+[https://caniuse.com/](https://caniuse.com/)
+
+- Javascript progressive enhancement
+[https://alistapart.com/article/progressiveenhancementwithjavascript](https://alistapart.com/article/progressiveenhancementwithjavascript)

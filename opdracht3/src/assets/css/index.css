@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #151515;
+    color: #fff;
+    font-size: 16px;
+    font-size: 1em;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    margin: 32px auto;
+    margin: 1em auto;
+}
+
+.audio-elements.hidden {
+    display: none;
+}
+
+.audio-elements>div {
+    max-width: 73%;
+    margin: auto;
+}
+
+.audio-buttons {
+    max-width: 30.4em;
+    margin: auto;
+}
+
+.sound-button {
+    height: 7em;
+    width: 7em;
+    margin: 0.3em;
+    background-color: #313131;
+    color: #fff;
+    text-transform: capitalize;
+    border-radius: 5px;
+    transition: 0.2s ease;
+}
+.sound-button:hover {
+	background-color: #444444;
+}
+.sound-button:focus {
+	border: 2px solid #E63946;
+}
+
+#play-button, #stop-button {
+    margin: 0 2em;
+	height: 24px;
+}
+
+#play-button.hidden, #stop-button.hidden {
+    display: none;
+}
+
+.sound-button.active {
+    background-color: #E63946;
+}
+
+.audio-controls {
+    margin: 2em auto;
+    text-align: center;
+	visibility: hidden;
+}
+
+.audio-controls h3 {
+	font-size: 1.05em;
+    font-weight: 500;
+}
+
+.audio-controls svg {
+	transition: 0.1s ease;
+}
+
+.audio-controls svg path {
+	fill: #cecdcd;
+}
+
+.audio-controls svg:hover path, .audio-control-buttons button:focus svg path {
+	fill: #fff;
+}
+
+.audio-controls svg:hover, .audio-control-buttons button:focus svg {
+	transform: scale(1.15);
+}
+
+.audio-controls.active {
+    visibility: visible;
+}
+
+@supports (display: flex) {
+    .audio-control-buttons {
+        display: flex;
+        justify-content: center;
+		align-items: center;
+    }
+}
+
+.incoming-text {
+	margin: 0;
+	position: absolute;
+	top: 50%;  /* position the top  edge of the element at the middle of the parent */
+   left: 50%; /* position the left edge of the element at the middle of the parent */
+	font-size: 3em;
+   animation: fly-in 2s;
+   transform: translate(-50%, -50%);
+   opacity: 0;
+}
+
+@keyframes fly-in {
+  0% {
+    transform: scale(100);
+	opacity: 0;
+  }
+  40% {
+    transform: translate(-50%, -50%) scale(0.9);
+	opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+	opacity: 0;
+  }
+}
+
+/* Reset button styles */
+
+button {
+    background: none;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+button{
+   outline:none;
+}
+input[type="button"]::-moz-focus-inner {
+   border: 0;
+}
+input::-moz-focus-inner, button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
