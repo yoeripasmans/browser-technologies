@@ -40,13 +40,15 @@
 	};
 
 	var incomingText = {
-		incomingText: document.querySelector(".incoming-text"),
+
 		text: ["I'ts lit!!!", "Skrrrt", "Bruh", "OMG", ],
 
-		show: function() {
+
+		init: function() {
+			this.incomingText = document.createElement("h3");
+			document.body.appendChild(this.incomingText);
 			this.incomingText.textContent = this.createText();
-			this.incomingText.classList.remove("hidden");
-			this.incomingText.classList.add("animated");
+			this.incomingText.classList.add("incoming-text", "animated");
 			this.remove();
 		},
 		remove: function() {
@@ -69,7 +71,7 @@
 
 	function bufferLoadCompleted(bufferList) {
 		loader.hide();
-		incomingText.show();
+		incomingText.init();
 		for (var i = 0; i < bufferList.length; i++) {
 			bufferList[i].src = audioElements[i].getAttribute("src");
 			bufferList[i].name = audioElements[i].getAttribute("data-instrument");
