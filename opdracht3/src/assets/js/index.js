@@ -30,10 +30,10 @@
 
 	var loader = {
 		element: document.querySelector('.loader'),
-		show: function(el) {
+		show: function() {
 			this.element.classList.add("show");
 		},
-		hide: function(el) {
+		hide: function() {
 			this.element.classList.remove("show");
 		}
 
@@ -41,17 +41,24 @@
 
 	var incomingText = {
 		incomingText: document.querySelector(".incoming-text"),
-		show: function(el) {
+		text: ["I'ts lit!!!", "Skrrrt", "Bruh", "OMG", ],
+
+		show: function() {
+			this.incomingText.textContent = this.createText();
 			this.incomingText.classList.remove("hidden");
 			this.incomingText.classList.add("animated");
-			this.disabled();
+			this.remove();
 		},
-		disabled: function(el) {
+		remove: function() {
 			var _this = this;
 			setTimeout(function() {
 				_this.incomingText.classList.add("hidden");
 			}, 2000);
-		}
+		},
+		createText: function() {
+				return this.text[Math.floor(Math.random()*this.text.length)];
+		},
+
 
 	};
 

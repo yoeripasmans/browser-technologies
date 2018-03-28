@@ -34,6 +34,15 @@ main {
     margin: auto;
 }
 
+@supports (display: flex) {
+    .audio-buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+
 .sound-button {
     height: 7em;
     width: 7em;
