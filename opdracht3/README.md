@@ -70,11 +70,14 @@ Als dit niet het geval is wordt er een fallback gebruikt wat er iets minder mooi
 
 ## CSS
 - CSS3 2D Transforms wordt alleen niet op Opera Mini ondersteund
-- View width & view height units worden niet ondersteund op opera Mini en deels op Internet explorer (Werkt wel door fallback naar EM)
+- EM waardes ondersteund vanaf IE10, daarom een fallback geschreven met pixels.
+
+## Audio
+Wav wordt door alle browsers behalve internet explorer ondersteund. Door te testen heb ik ondervonden dat deze op internet explorer automatisch worden verborgen en worden gezien als een ongeldige bron. Als ik meer tijd zou hebben dan zou ik voor alle geluidbestanden ook een fallback maken door deze om te zetten naar mp3. Dit wordt namelijk wel op elke browser ondersteund en op IE9 en hoger.
 
 ## Accessibility
 
-Door van te voren na te denken over accessibility heb ik voor alle interactieve elementen buttons gebruikt. Zo kan de applicatie gemakkelijk zonder muis/trackpad bestuurd worden.
+Door van te voren na te denken over accessibility heb ik voor alle interactieve elementen buttons gebruikt. Zo kan de applicatie gemakkelijk zonder muis/trackpad bestuurd worden. Daarnaast rekening gehouden met contrast en regel afstand om zo mijn app toegangkelijker te maken.
 
 ## Bronnen
 

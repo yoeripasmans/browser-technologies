@@ -67,9 +67,6 @@
 						document.querySelector('.' + instruments[i].name).classList.add("active");
 				}
 			}
-
-			// Cancel the default action to avoid it being handled twice
-			// e.preventDefault();
 		}, true);
 
 		window.addEventListener("keyup", function(e) {
