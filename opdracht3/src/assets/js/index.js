@@ -38,6 +38,23 @@
 		}
 
 	};
+
+	var incomingText = {
+		incomingText: document.querySelector(".incoming-text"),
+		show: function(el) {
+			this.incomingText.classList.remove("hidden");
+			this.incomingText.classList.add("animated");
+			this.disabled();
+		},
+		disabled: function(el) {
+			var _this = this;
+			setTimeout(function() {
+				_this.incomingText.classList.add("hidden");
+			}, 2000);
+		}
+
+	};
+
 	loader.show();
 	//initialize bufferloader
 	bufferLoader.load();
@@ -45,7 +62,7 @@
 
 	function bufferLoadCompleted(bufferList) {
 		loader.hide();
-		document.querySelector(".incoming-text").classList.add("animated");
+		incomingText.show();
 		for (var i = 0; i < bufferList.length; i++) {
 			bufferList[i].src = audioElements[i].getAttribute("src");
 			bufferList[i].name = audioElements[i].getAttribute("data-instrument");

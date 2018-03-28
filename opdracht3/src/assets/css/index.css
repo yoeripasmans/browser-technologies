@@ -106,8 +106,8 @@ main {
     }
 }
 
-.incoming-text {
-	opacity: 0;
+.incoming-text.hidden {
+	display: none;
 }
 
 .incoming-text.animated {
