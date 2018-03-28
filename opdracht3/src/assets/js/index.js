@@ -45,6 +45,7 @@
 
 	function bufferLoadCompleted(bufferList) {
 		loader.hide();
+		document.querySelector(".incoming-text").classList.add("animated");
 		for (var i = 0; i < bufferList.length; i++) {
 			bufferList[i].src = audioElements[i].getAttribute("src");
 			bufferList[i].name = audioElements[i].getAttribute("data-instrument");
