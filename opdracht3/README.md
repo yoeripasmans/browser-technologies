@@ -2,7 +2,7 @@
 
 Een uitgewerkte demo waarbij je met verschillende geluiden een beat kan maken. Dit kan met de muis of toetsenbord gedaan worden. Daarnaast kan de gebruiker in de achtergrond nog een geluid laten afspelen om daarbij een beat te kunnen maken.
 
-[Link naar demo](https://yoeripasmans.github.io/browser-technologies/opdracht3/beatmaker/)
+[Link naar demo](https://yoeripasmans.github.io/browser-technologies/opdracht3/src/)
 
 ## Core functionaliteit
 
