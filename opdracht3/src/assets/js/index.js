@@ -28,8 +28,20 @@
 		bufferLoadCompleted
 	);
 
+
 	var loader = {
 		element: document.querySelector('.loader'),
+		init: function() {
+			this.element = document.createElement("div");
+			document.body.appendChild(this.element);
+			this.element.classList.add("loader");
+
+			for (var i = 0; i < 12; i++) {
+				this.elementCircle = document.createElement("div");
+				this.element.appendChild(this.elementCircle);
+					this.elementCircle.classList.add("sk-circle" + (i +1), "sk-circle");
+			}
+		},
 		show: function() {
 			this.element.classList.add("show");
 		},
@@ -42,7 +54,6 @@
 	var incomingText = {
 
 		text: ["I'ts lit!!!", "Skrrrt", "Bruh", "OMG", ],
-
 
 		init: function() {
 			this.incomingText = document.createElement("h3");
@@ -63,7 +74,7 @@
 
 
 	};
-
+	loader.init();
 	loader.show();
 	//initialize bufferloader
 	bufferLoader.load();
