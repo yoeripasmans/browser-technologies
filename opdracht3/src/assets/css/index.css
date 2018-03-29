@@ -30,6 +30,7 @@ main {
 }
 
 .audio-buttons {
+	max-width: 486px;
     max-width: 30.4em;
     margin: auto;
 }
@@ -44,6 +45,8 @@ main {
 
 
 .sound-button {
+	width: 112px;
+	height: 112px;
     height: 7em;
     width: 7em;
     margin: 0.3em;
@@ -62,6 +65,17 @@ main {
     border: 2px solid #E63946;
 }
 
+.sound-button.active {
+    background-color: #E63946;
+}
+
+.audio-controls {
+	margin: 32px auto;
+    margin: 2em auto;
+    text-align: center;
+    visibility: hidden;
+}
+
 #play-button, #stop-button {
     margin: 0 32px;
     margin: 0 2em;
@@ -70,16 +84,6 @@ main {
 
 #play-button.hidden, #stop-button.hidden {
     display: none;
-}
-
-.sound-button.active {
-    background-color: #E63946;
-}
-
-.audio-controls {
-    margin: 2em auto;
-    text-align: center;
-    visibility: hidden;
 }
 
 .audio-controls h3 {
@@ -184,7 +188,6 @@ input::-moz-focus-inner, button::-moz-focus-inner {
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%,-50%);
-
 }
 
 .loader.show {
