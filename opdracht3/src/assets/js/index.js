@@ -1,14 +1,8 @@
 (function() {
 	var context;
 	//Feature detection
-	if (document.querySelector || ('classList' in document.body)) {
-		try {
-			// Fix up for prefixing
-			window.AudioContext = window.AudioContext || window.webkitAudioContext;
-			context = new AudioContext();
-		} catch (e) {
-			alert('Web Audio API is not supported in this browser');
-		}
+	if (document.querySelector && ('classList' in document.body) && window.AudioContext || window.webkitAudioContext) {
+		context = new AudioContext();
 	} else {
 		return false;
 	}
@@ -29,7 +23,6 @@
 		bufferLoadCompleted
 	);
 
-
 	var loader = {
 		element: document.querySelector('.loader'),
 		init: function() {
@@ -37,7 +30,7 @@
 			this.element = document.createElement("div");
 			document.body.appendChild(this.element);
 			this.element.classList.add("loader");
-
+			//Create text
 			this.text = document.createElement("p");
 			this.element.appendChild(this.text);
 			this.text.classList.add("loader-text");
@@ -47,7 +40,7 @@
 			for (var i = 0; i < 12; i++) {
 				this.elementCircle = document.createElement("div");
 				this.element.appendChild(this.elementCircle);
-					this.elementCircle.classList.add("sk-circle" + (i +1), "sk-circle");
+				this.elementCircle.classList.add("sk-circle" + (i + 1), "sk-circle");
 			}
 		},
 		show: function() {
@@ -77,7 +70,7 @@
 			}, 2000);
 		},
 		createText: function() {
-				return this.text[Math.floor(Math.random()*this.text.length)];
+			return this.text[Math.floor(Math.random() * this.text.length)];
 		},
 
 
