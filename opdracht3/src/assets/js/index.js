@@ -14,6 +14,7 @@
 	}
 
 	var audioElements = document.querySelectorAll('audio');
+
 	var audioElementsWrapper = document.querySelector('.audio-elements');
 	audioElementsWrapper.classList.add("hidden");
 	var audioSrc = [];
