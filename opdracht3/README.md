@@ -66,7 +66,7 @@ Als dit niet het geval is wordt er een fallback gebruikt wat er iets minder mooi
 - classList.add & classList.remove wordt door alle browsers ondersteund alleen internet explorer t/m 9.
 - addEventListener niet gesupport op IE 8 en Opera 6.0 and eerdere versies.
 
-## CSS
+### CSS
 - CSS3 2D Transforms wordt alleen niet op Opera Mini ondersteund
 - EM waardes ondersteund vanaf IE10, daarom een fallback geschreven met pixels.
 - Display flex ondersteund vanaf IE10, feature detection geschreven met fallback naar basis CSS.

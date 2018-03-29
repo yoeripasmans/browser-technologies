@@ -32,10 +32,17 @@
 	var loader = {
 		element: document.querySelector('.loader'),
 		init: function() {
+			//Create loader div
 			this.element = document.createElement("div");
 			document.body.appendChild(this.element);
 			this.element.classList.add("loader");
 
+			this.text = document.createElement("p");
+			this.element.appendChild(this.text);
+			this.text.classList.add("loader-text");
+			this.text.textContent = "Loading audio fam";
+
+			//Create circles
 			for (var i = 0; i < 12; i++) {
 				this.elementCircle = document.createElement("div");
 				this.element.appendChild(this.elementCircle);
