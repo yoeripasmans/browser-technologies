@@ -1,16 +1,19 @@
 (function() {
-	var context;
+	var audioCtx;
+	var audioElements = document.querySelectorAll('audio');
+
 	//Feature detection
-	if (document.querySelector && ('classList' in document.body) && window.AudioContext || window.webkitAudioContext) {
-		context = new AudioContext();
+	if ('querySelector' in document && 'classList' in document.body && ('AudioContext' in window || 'webkitAudioContext' in window) ) {
+		// && (audioElements[0].canPlayType(type='audio/wav; codecs="1"') === "probably"
+		var AudioContext = window.AudioContext || window.webkitAudioContext;
+		audioCtx = new AudioContext();
 	} else {
 		return false;
 	}
 
-	var audioElements = document.querySelectorAll('audio');
-
 	var audioElementsWrapper = document.querySelector('.audio-elements');
 	audioElementsWrapper.classList.add("hidden");
+
 	var audioSrc = [];
 	//Get src and hide audio elements
 	for (var i = 0; i < audioElements.length; i++) {
@@ -19,7 +22,7 @@
 
 	//config bufferloader with audio src from audio elements
 	var bufferLoader = new BufferLoader(
-		context, audioSrc,
+		audioCtx, audioSrc,
 		bufferLoadCompleted
 	);
 
@@ -115,7 +118,7 @@
 			for (var i = 0; i < instruments.length; i++) {
 				switch (e.key) {
 					case keys[i]:
-						playSound(instruments[i], 0);
+						playSound(instruments[i]);
 						document.querySelector('.' + instruments[i].name).classList.add("active");
 				}
 			}
@@ -168,10 +171,10 @@
 			index: 0,
 
 			createSource: function(buffer) {
-				var source = context.createBufferSource();
+				var source = audioCtx.createBufferSource();
 				source.buffer = buffer;
 				source.loop = true;
-				source.connect(context.destination);
+				source.connect(audioCtx.destination);
 				return source;
 			},
 			playSound: function() {
@@ -283,9 +286,9 @@
 	}
 
 	function playSound(buffer) {
-		var source = context.createBufferSource();
+		var source = audioCtx.createBufferSource();
 		source.buffer = buffer;
-		source.connect(context.destination);
+		source.connect(audioCtx.destination);
 		if (!source.start) {
 			source.noteOn(0);
 		} else {
