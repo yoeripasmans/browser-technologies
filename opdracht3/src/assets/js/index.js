@@ -2,7 +2,7 @@
 	var audioCtx;
 
 	//Feature detection
-	if ('querySelector' in document && 'classList' in document.body && ('AudioContext' in window || 'webkitAudioContext' in window) ) {
+	if ('querySelector' in document && 'classList' in document.body && ('AudioContext' in window || 'webkitAudioContext' in window)) {
 		var AudioContext = window.AudioContext || window.webkitAudioContext;
 		audioCtx = new AudioContext();
 	} else {
@@ -55,7 +55,7 @@
 
 	var incomingText = {
 
-		text: ["I'ts lit!!!", "Skrrrt", "Bruh", "OMG", ],
+		text: ["I'ts lit!!!", "Skrrrt", "Bruh", "OMG!"],
 
 		init: function(instruments) {
 			this.incomingText = document.createElement("h3");
@@ -281,11 +281,19 @@
 				button.addEventListener("click", function() {
 					playSound(instruments[j]);
 				});
+				var mouseDown = false;
 				button.addEventListener("mousedown", function() {
+					mouseDown = true;
 					this.classList.add("active");
 				});
 				button.addEventListener("mouseup", function() {
+					mouseDown = false;
 					this.classList.remove("active");
+				});
+				button.addEventListener('focus', function(event) {
+					if (mouseDown) {
+						event.target.blur();
+					}
 				});
 			})();
 		}
