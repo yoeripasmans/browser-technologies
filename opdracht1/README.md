@@ -75,6 +75,6 @@ Voor de screenreader heb ik `voiceOver` gebruikt op mijn mac. Hierdoor kwam ik e
 
 ## Devicelab
 
-In het device lab heb ik mijn OBA app getest en kwam er al snel achter dat deze niet overal werkte. Het grootste probleem was dat de mapbox kaart niet laadde op de oudere devices. Op de nieuwere apparaten werkte deze wel. Het probleem daarbij was alleen dat het inzoomen op de kaart niet werkte. De app was voor de rest wel bruikbaar, het navigeren van de kaart naar de detailpagina was mogelijk en werkte prima. 
+In het device lab heb ik mijn OBA app getest en kwam er al snel achter dat deze niet overal werkte. Het grootste probleem was dat de mapbox kaart niet laadde op de oudere devices. Op de nieuwere apparaten werkte deze wel. Het probleem daarbij was alleen dat het inzoomen op de kaart niet werkte. De app was voor de rest wel bruikbaar, het navigeren van de kaart naar de detailpagina was mogelijk en werkte prima.
 
-![device](device.jpg)
+![device](device.JPG)
