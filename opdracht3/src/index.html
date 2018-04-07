@@ -3,8 +3,8 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<meta name="description" content="An interactive beat creator">
 	<title>Beatmaker</title>
 	<link rel="stylesheet" href="assets/css/index.css">
 </head>
@@ -53,11 +53,11 @@
 				<h3>Loop player</h3>
 			</header>
 			<div class="audio-control-buttons">
-				<button id="prev-button" type="button">
+				<button id="prev-button" name="previous" type="button">
 			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 487.91 487.91" width="14px" height="14px"><path d="M464.923 19.725c12.696 0 22.987 10.29 22.987 22.985v402.253c0 12.694-10.291 22.987-22.987 22.987L91.403 261.075s-17.239-17.238 0-34.477c17.239-17.24 373.52-206.873 373.52-206.873zM76.821 443.271c0 13.76-11.155 24.915-24.915 24.915H24.915C11.155 468.186 0 457.031 0 443.271V44.639c0-13.761 11.155-24.915 24.915-24.915h26.991c13.76 0 24.915 11.155 24.915 24.915v398.632z" fill="#000"/></svg></button>
-				<button id="play-button" type="button"> <svg width="24" height="24" viewbox="210 14 21 24" xmlns="http://www.w3.org/2000/svg" class="play-icon"><path fill="#000" fill-rule="evenodd" d="M230.677 25.815L210 37.63V14"/></svg></button>
-				<button id="stop-button" type="button" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 36 36" width="24" height="24"><path d="M35 0H1C.448 0 0 .447 0 1v34c0 .553.448 1 1 1h34c.552 0 1-.447 1-1V1c0-.553-.448-1-1-1z" fill="#000"/></svg></button>
-				<button id="next-button" type="button">
+				<button id="play-button" name="play" type="button"> <svg width="24" height="24" viewbox="210 14 21 24" xmlns="http://www.w3.org/2000/svg" class="play-icon"><path fill="#000" fill-rule="evenodd" d="M230.677 25.815L210 37.63V14"/></svg></button>
+				<button id="stop-button" name="stop" type="button" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 36 36" width="24" height="24"><path d="M35 0H1C.448 0 0 .447 0 1v34c0 .553.448 1 1 1h34c.552 0 1-.447 1-1V1c0-.553-.448-1-1-1z" fill="#000"/></svg></button>
+				<button id="next-button" name="next" type="button">
 			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 487.913 487.913" width="14" height="14"><path d="M22.987 468.187C10.291 468.187 0 457.896 0 445.202V42.949c0-12.695 10.291-22.988 22.987-22.988l373.519 206.875s17.239 17.238 0 34.477C379.268 278.552 22.987 468.187 22.987 468.187zM411.09 44.64c0-13.76 11.155-24.915 24.915-24.915h26.993c13.76 0 24.915 11.155 24.915 24.915v398.633c0 13.76-11.155 24.915-24.915 24.915h-26.993c-13.76 0-24.915-11.155-24.915-24.915V44.64z" fill="#000"/></svg></button>
 			</div>
 			<!-- <label for="bpm">BPM</label>
