@@ -1,16 +1,14 @@
 (function() {
 	var audioCtx;
-	var audioElements = document.querySelectorAll('audio');
 
 	//Feature detection
 	if ('querySelector' in document && 'classList' in document.body && ('AudioContext' in window || 'webkitAudioContext' in window) ) {
-		// && (audioElements[0].canPlayType(type='audio/wav; codecs="1"') === "probably"
 		var AudioContext = window.AudioContext || window.webkitAudioContext;
 		audioCtx = new AudioContext();
 	} else {
 		return false;
 	}
-
+	var audioElements = document.querySelectorAll('audio');
 	var audioElementsWrapper = document.querySelector('.audio-elements');
 	audioElementsWrapper.classList.add("hidden");
 
@@ -59,12 +57,21 @@
 
 		text: ["I'ts lit!!!", "Skrrrt", "Bruh", "OMG", ],
 
-		init: function() {
+		init: function(instruments) {
 			this.incomingText = document.createElement("h3");
 			document.body.appendChild(this.incomingText);
-			this.incomingText.textContent = this.createText();
+			this.incomingText.textContent = this.randomText();
 			this.incomingText.classList.add("incoming-text", "animated");
 			this.remove();
+
+			var horn = instruments.find(function(d) {
+				return d.name === 'fx';
+			});
+
+			setTimeout(function() {
+				playSound(horn);
+			}, 750);
+
 		},
 		remove: function() {
 			var _this = this;
@@ -72,7 +79,7 @@
 				_this.incomingText.classList.add("hidden");
 			}, 2000);
 		},
-		createText: function() {
+		randomText: function() {
 			return this.text[Math.floor(Math.random() * this.text.length)];
 		},
 
@@ -83,10 +90,7 @@
 	//initialize bufferloader
 	bufferLoader.load();
 
-
 	function bufferLoadCompleted(bufferList) {
-		loader.hide();
-		incomingText.init();
 		for (var i = 0; i < bufferList.length; i++) {
 			bufferList[i].src = audioElements[i].getAttribute("src");
 			bufferList[i].name = audioElements[i].getAttribute("data-instrument");
@@ -111,6 +115,8 @@
 
 		createPads(instruments);
 		createAudioPlayer(loops);
+		loader.hide();
+		incomingText.init(instruments);
 
 		var keys = ["3", "4", "5", "6", "e", "r", "t", "y", "d", "f", "g", "h", "c", "v", "b", "n"];
 
@@ -273,7 +279,7 @@
 				button.classList.add("sound-button", instruments[j].name);
 				button.setAttribute("data-instrument", instruments[j].name);
 				button.addEventListener("click", function() {
-					playSound(instruments[j], 0);
+					playSound(instruments[j]);
 				});
 				button.addEventListener("mousedown", function() {
 					this.classList.add("active");
