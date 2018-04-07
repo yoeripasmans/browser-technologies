@@ -295,6 +295,9 @@
 						event.target.blur();
 					}
 				});
+				button.addEventListener('gesturestart', function(e) {
+					e.preventDefault();
+				});
 			})();
 		}
 	}
