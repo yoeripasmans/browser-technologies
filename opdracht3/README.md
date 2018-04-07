@@ -6,6 +6,36 @@ Een uitgewerkte demo waarbij je met verschillende geluiden een beat kan maken. D
 
 [Link naar demo](https://yoeripasmans.github.io/browser-technologies/opdracht3/src/)
 
+## Aanpassingen na feedback
+
+- De feature detection veranderd van:
+```javascript
+if (document.querySelector || ('classList' in document.body)) {
+	try {
+		// Fix up for prefixing
+		window.AudioContext = window.AudioContext || window.webkitAudioContext;
+		context = new AudioContext();
+	} catch (e) {
+		alert('Web Audio API is not supported in this browser');
+	}
+} else {
+	return false;
+}
+```
+Naar:
+```javascript
+if ('querySelector' in document && 'classList' in document.body && ('AudioContext' in window || 'webkitAudioContext' in window)) {
+	var AudioContext = window.AudioContext || window.webkitAudioContext;
+	audioCtx = new AudioContext();
+} else {
+	return false;
+}
+```
+Om zo bug te voorkomen dat javascript code wordt uitgevoerd zonder dat de `window.AudioContext` ondersteund wordt. Daarbij getest in Internet Explorer waar hij de javascript code dus niet uitgevoerd, omdat hij geen `window.AudioContext` of `window.webkitAudioContext` ondersteund.
+
+- Firefox bug opgelost waarbij een paar `.wav` files niet de juiste codering bevatte. Omgezet naar mp3 en werkend getest.
+- Accessibility verbeterd door geluid buttons een naam van het geluid te geven en `user-scalable=no` weg te halen.
+
 ## Core functionaliteit
 
 De belangrijkste functionaliteit van de beatmaker is dat de gebruiker altijd geluid moet kunnen afspelen op elk device ook als CSS of Javascript het niet doet. Dit heb ik gerealiseerd door eerst een basis structuur met audio elementen op te zetten in de HTMl. Dit werkt namelijk altijd. Hierna voeg ik als de browser het ondersteund met Javascript de functionaliteiten van de `Web Audio API` toe en verberg ik alle audio elementen. Op deze manier blijft de audio ten alle tijden bruikbaar.

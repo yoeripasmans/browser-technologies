@@ -64,13 +64,13 @@
 			this.incomingText.classList.add("incoming-text", "animated");
 			this.remove();
 
-			var horn = instruments.find(function(d) {
-				return d.name === 'fx';
-			});
-
-			setTimeout(function() {
-				playSound(horn);
-			}, 750);
+			// var horn = instruments.find(function(d) {
+			// 	return d.name === 'fx';
+			// });
+			//
+			// setTimeout(function() {
+			// 	playSound(horn);
+			// }, 750);
 
 		},
 		remove: function() {
@@ -276,6 +276,7 @@
 				var button = document.createElement("button");
 				document.querySelector('.audio-buttons').appendChild(button);
 				button.textContent = instruments[j].name;
+				button.name = "sound-" + instruments[j].name;
 				button.classList.add("sound-button", instruments[j].name);
 				button.setAttribute("data-instrument", instruments[j].name);
 				button.addEventListener("click", function() {
