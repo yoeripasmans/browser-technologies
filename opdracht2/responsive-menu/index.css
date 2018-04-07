@@ -7,8 +7,8 @@ body {
     padding: 0;
     width: 100%;
     font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1em;
+    font-size: 16px;
+    font-size: 1em;
 }
 
 body.noscroll {
@@ -19,21 +19,21 @@ body.noscroll {
 
 header {
     width: 100%;
-	height: 64px;
+    height: 64px;
     height: 4em;
-	padding: 16px;
+    padding: 16px;
     padding: 1em;
     display: flex;
     align-items: center;
 }
 
 article {
-	padding: 32px;
+    padding: 32px;
     padding: 2em;
-	max-width: 880px;
+    max-width: 880px;
     max-width: 55em;
     margin: 0 auto;
-	font-size: 16px;
+    font-size: 16px;
     font-size: 1em;
     line-height: 1.5;
 }
@@ -45,15 +45,14 @@ article h2 {
 }
 
 h1 {
-	font-size: 1.4em;
+    font-size: 1.4em;
 }
-
 
 .menu-toggle {
     margin-left: auto;
 }
 
-/*Displays buttons */
+/*Displays menu buttons */
 
 @media (max-width: 48em) {
     .menu-close, .menu-toggle {
@@ -87,7 +86,7 @@ h1 {
     margin: 0;
     padding: 4em 0 0;
     min-height: 100%;
-	width: 350px;
+    width: 350px;
     width: 22em;
     width: 80vw;
     background-color: #1a1a1a;
@@ -97,7 +96,7 @@ h1 {
     display: block;
     padding: 1.5em;
     line-height: 1;
-	font-size: 16px;
+    font-size: 16px;
     font-size: 1em;
     color: #fff;
     text-decoration: none;
@@ -110,16 +109,15 @@ h1 {
 
 .main-menu a:hover, .main-menu a:focus {
     background: #333;
-    text-decoration: underline;
 }
 
 .main-menu .menu-close {
     position: absolute;
     right: 0;
     top: 0;
-	padding: 20px;
+    padding: 20px;
     padding: 1.25em;
-	border-bottom: none;
+    border-bottom: none;
 }
 
 .main-menu .menu-close a {
@@ -127,25 +125,25 @@ h1 {
 }
 
 .main-menu .menu-close svg {
-	width: 20px;
+    width: 20px;
     width: 1.3em;
     fill: #fff;
 }
 
-.main-menu:target, .main-menu[aria-expanded="true"], .main-menu.open {
+.main-menu:target, .main-menu.open {
     right: 0;
 }
 
-.main-menu:target .menu-close, .main-menu[aria-expanded="true"] .menu-close {
-    z-index: 1001;
+.main-menu:target, .menu-close {
+    z-index: 999;
 }
 
-.main-menu:target ul, .main-menu[aria-expanded="true"] ul {
+.main-menu:target ul, .main-menu ul {
     position: relative;
-    z-index: 1000;
+    z-index: 2;
 }
 
-.main-menu:target+.overlay, .main-menu[aria-expanded="true"]+.overlay, .main-menu.open+.overlay {
+.main-menu:target+.overlay, .main-menu.open+.overlay {
     position: absolute;
     display: block;
     content: "";
@@ -160,21 +158,15 @@ h1 {
 }
 
 @supports (position: fixed) {
-    .main-menu, .main-menu:target+.overlay, .main-menu[aria-expanded="true"]+.overlay {
+    .main-menu, .main-menu:target+.overlay, .main-menu+.overlay {
         position: fixed;
     }
 }
-
-/*
- Larger screen styling
- Horizontal menu
-*/
 
 @media (min-width: 48em) {
     .menu-toggle, .main-menu .menu-close {
         display: none;
     }
-    /* Undo positioning of off-canvas menu */
     .main-menu {
         position: relative;
         left: auto;
@@ -196,5 +188,8 @@ h1 {
     .main-menu a:hover, .main-menu a:focus {
         background: none;
         color: #c00;
+    }
+    .main-menu.open+.overlay {
+        display: none;
     }
 }

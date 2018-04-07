@@ -4,11 +4,22 @@ Een responsive uitgewerkt menu, dat een hamburger icoon wordt op een klein scher
 
 [Link naar demo](https://yoeripasmans.github.io/browser-technologies/opdracht2/responsive-menu/)
 
+## Aanpassingen na feedback
+
+- Alle aria attributen wegehaald uit de `index.html`
+- preventDefault onderaan de functie gezet.
+
+```javascript
+menuOpen.addEventListener('click', function(e) {
+	menu.classList.add('open');
+	body.classList.add('noscroll');
+	e.preventDefault(); 
+});
+```
+
 ## Core functionaliteit
 
 De belangrijkste functionaliteit van het responsive menu is dat de gebruiker altijd moet kunnen navigeren op elke device ook als CSS of Javascript het niet doet. Dit heb ik gerealiseerd door eerst een basis structuur op te zetten in HTMl. Dit werkt namelijk altijd. Daarna heb ik een hamburger menu gerealiseerd met pure CSS. Dit heb ik laten werken door middel van target. Hiermee kan je met HTML het menu open en dichtklappen zonder Javascript. Ten slotte heb ik het menu enchant met Javascript door het uitzetten van default behavior van de browser bij het openen van het menu. Voor het openen van het menu gebruikte ik namelijk een link. Het vervelende hiervan is dat het in de browsergeschiedenis komt te staan en dat de pagina automatisch naar boven scrollt. Dit heb ik met Javascript gefixt. Zo blijft het menu ten alle tijden werken.
-
-## Schetsen
 
 ## Schetsen
 
